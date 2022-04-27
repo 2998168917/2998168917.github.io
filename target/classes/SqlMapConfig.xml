@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!--读取属性文件-->
+<configuration>
+    <properties resource="jdbc.properties"></properties>
+<!--配置数据库环境变量-->
+    <!--default:使用下面enviponment标签的id属性进行指定配置-->
+    <environments default="development">
+        <!--配置第一套...-->
+        <environment id=""><!--id:就是environment提供给environments属性使用-->
+            <transactionManager type="JDBC"></transactionManager><!--配置事务管理器-->
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driverClassName}"></property>
+                <property name="url" value="${jdbc.url}"></property>
+                <property name="username" value="${jdbc.username}"></property>
+                <property name="password" value="${jdbc.password}"></property>
+            </dataSource><!---->
+
+        </environment>
+       <!-- &lt;!&ndash;配置第二套...&ndash;&gt;
+        <environment id="home">
+            <transactionManager type=""></transactionManager>
+            <dataSource type=""></dataSource>
+        </environment>
+        &lt;!&ndash;配置第三套...&ndash;&gt;
+        <environment id="online">
+            <transactionManager type=""></transactionManager>
+            <dataSource type=""></dataSource>
+        </environment>-->
+
+    </environments>
+
+
+</configuration>
